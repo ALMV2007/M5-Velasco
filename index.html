@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FOOD LIFE</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script type="text/javascript" src="script.js" defer></script>
 </head>
 <body>
 
 <header>
     <a href="#about" class="site-title">FOOD LIFE</a>
-    <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
-    <i class="bx bx-menu" id="menu-icon" role="button" aria-label="Toggle navigation menu"></i>
-
     <nav class="navbar">
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#critique">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
+        <button id="theme-switch">
+         <svg id="dark" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/></svg>
+         <svg id="light" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M440-800v-120h80v120h-80Zm0 760v-120h80v120h-80Zm360-400v-80h120v80H800Zm-760 0v-80h120v80H40Zm708-252-56-56 70-72 58 58-72 70ZM198-140l-58-58 72-70 56 56-70 72Zm564 0-70-72 56-56 72 70-58 58ZM212-692l-72-70 58-58 70 72-56 56Zm98 382q-70-70-70-170t70-170q70-70 170-70t170 70q70 70 70 170t-70 170q-70 70-170 70t-170-70Zm283.5-56.5Q640-413 640-480t-46.5-113.5Q547-640 480-640t-113.5 46.5Q320-547 320-480t46.5 113.5Q413-320 480-320t113.5-46.5ZM480-480Z"/></svg>
+        </button>
       </ul>
     </nav>
 </header>
@@ -54,7 +56,27 @@
             </tr>
           </thead>
           <tbody>
-            <!-- Dynamic rows will be rendered here via js/script.js -->
+            <tr>
+              <td>The Golden Wok</td>
+              <td>Szechuan</td>
+              <td>Mapo Tofu</td>
+              <td>4.8 / 5.0</td>
+              <td>Must Visit</td>
+            </tr>
+            <tr>
+              <td>Lucia's Trattoria</td>
+              <td>Italian</td>
+              <td>Truffle Cacio e Pepe</td>
+              <td>4.2 / 5.0</td>
+              <td>Worth It</td>
+            </tr>
+            <tr>
+              <td>Velvet & Smoke</td>
+              <td>BBQ / Fusion</td>
+              <td>Smoked Brisket Bao</td>
+              <td>2.5 / 5.0</td>
+              <td>Overpriced</td>
+            </tr>
           </tbody>
         </table>
     </section>
@@ -63,37 +85,31 @@
         <h2>Direct Contact</h2>
         <h5>If you would like to get in touch with me, please fill out the form below and I will get back to you as soon as possible.</h5>
 
-        <form id="contact-form" action="mailto:amvelasco@gmail.com" method="POST" novalidate>
+        <form action="mailto:amvelasco@gmail.com" method="POST">
           <div class="input-box">
-            <div class="field-group">
+            <div>
               <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Name">
-              <span class="error-msg" id="name-error"></span>
+              <input type="text" id="name" name="name" placeholder="Name" required>
             </div>
-            <div class="field-group">
+            <div>
               <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="Email Address">
-              <span class="error-msg" id="email-error"></span>
+              <input type="email" id="email" name="email" placeholder="Email Address" required>
             </div>
           </div>
           <div class="input-box">
-            <div class="field-group">
+            <div>
               <label for="phone">Phone Number</label>
               <input type="tel" id="phone" name="phone" placeholder="Phone Number">
-              <span class="error-msg" id="phone-error"></span>
             </div>
-            <div class="field-group">
+            <div>
               <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="Subject">
-              <span class="error-msg" id="subject-error"></span>
+              <input type="text" id="subject" name="subject" placeholder="Subject" required>
             </div>
           </div>
-          <div class="field-group">
+          <div>
             <label for="message">Text Message</label>
-            <textarea class="textarea" id="message" name="message" cols="30" rows="5" placeholder="Text Message"></textarea>
-            <span class="error-msg" id="message-error"></span>
+            <textarea class="textarea" id="message" name="message" cols="30" rows="5" placeholder="Text Message" required></textarea>
           </div>
-          <div id="form-success" class="success-msg"></div>
           <div class="Button">
             <button type="submit">Send</button>
           </div>
@@ -105,6 +121,5 @@
   <p>&copy; 2026 FOOD LIFE. Real reviews, not sponsored.</p>
 </footer>
 
-<script src="js/script.js"></script>
 </body>
 </html>

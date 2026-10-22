@@ -1,0 +1,315 @@
+:root {
+  --space-xs: 0.5rem;
+  --space-sm: 1rem; 
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;    
+
+  --font-base: 1rem;
+  --font-sm: 0.875rem;
+  --font-lg: 1.25rem;
+  --font-xl: 1.875rem;
+}
+
+:root {
+  --bg-color: #fffdf9;        
+  --surface-color: #f7f1e5;     
+  --text-main: #2b1b17;    
+  --text-muted: #68564d;  
+  --primary: #8b4513;   
+  --accent: #d49b00; 
+  --accent-light: #fef3c7; 
+  --border-color: #e2d4c0; 
+  }   
+
+.darkmode {
+  --bg-color: #422018;        
+  --surface-color: #472d20;     
+  --text-main: #fffdf9;    
+  --text-muted: #e4cbba;  
+  --primary: #c38572;   
+  --accent: #98482d; 
+  --accent-light: #271109; 
+  --border-color: #200d05; 
+}
+#theme-switch {
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: right;
+}
+
+#theme-switch svg {
+  fill: var(--text-main);
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+#theme-switch svg:first-child {
+  display: block;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+body {
+  padding-top: 70px;
+}
+
+h1, h2, h3, h5, a {
+  color: var(--primary);
+  line-height: 1.2;
+  margin-bottom: var(--space-xs);
+}
+
+h2 {
+  font-size: var(--font-xl);
+}
+
+p, td, th {
+  font-size: var(--font-base);
+  color: var(--text-main);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: var(--bg-color);
+  border-bottom: 2px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--space-sm);
+  z-index: 1000;
+}
+
+.site-title {
+  font-size: var(--font-lg);
+  font-weight: 800;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: var(--space-sm);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: var(--font-sm);
+  padding: var(--space-xs);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.site-title:hover,
+.site-title:focus,
+.navbar a:hover,
+.navbar a:focus {
+  color: var(--accent);
+  outline: 2px solid var(--accent);
+  background-color: var(--accent-light);
+}
+
+#menu-icon {
+  display: none; 
+}
+
+section {
+  padding: var(--space-lg) var(--space-sm);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.Food-table-image {
+  margin-bottom: var(--space-sm);
+  overflow: hidden;
+}
+
+.reviews-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-sm);
+  background-color: var(--surface-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.reviews-table th, 
+.reviews-table td {
+  padding: var(--space-xs) var(--space-sm);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.reviews-table th {
+  background-color: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.reviews-table tbody tr:hover {
+  background-color: var(--accent-light);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.input-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+input, textarea {
+  width: 100%;
+  padding: var(--space-xs) var(--space-sm);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: var(--font-base);
+  background-color: #ffffff;
+  color: var(--text-main);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+button {
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: var(--space-xs) var(--space-md);
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover, button:focus {
+  background-color: var(--accent);
+  outline: 2px solid var(--primary);
+}
+
+footer {
+  text-align: center;
+  padding: var(--space-md);
+  background-color: var(--surface-color);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+}
+
+@media (min-width: 600px) {
+  header {
+    padding: 0 var(--space-md);
+  }
+
+  .navbar a {
+    font-size: var(--font-base);
+  }
+
+  .input-box {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  #about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: center;
+  }
+
+  .reviews-table th, 
+  .reviews-table td {
+    padding: var(--space-sm);
+  }
+}
+label {
+  display: block;
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+caption {
+  font-weight: bold;
+  padding: var(--space-xs);
+  color: var(--primary);
+  text-align: left;
+}
+
+section {
+  text-align: center;
+}
+
+.Food-table-image img {
+  margin: 0 auto;
+}
+
+.reviews-table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 900px) {
+  #about {
+    text-align: center;
+  }
+}
