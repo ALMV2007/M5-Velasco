@@ -2,11 +2,13 @@
 let darkmode = localStorage.getItem("darkmode");
 const darkmodeToggle = document.getElementById("theme-switch");
 
+// Applies the dark theme and saves the user's preference.
 const enableDarkmode = () => { 
   document.body.classList.add("darkmode");
   localStorage.setItem("darkmode", "active");
 }
 
+// Removes the dark theme and saves the light-mode preference.
 const disableDarkmode = () => {
   document.body.classList.remove("darkmode");
   localStorage.setItem("darkmode", null);
@@ -24,12 +26,14 @@ const menuToggle = document.getElementById("menu-toggle");
 const navbar = document.querySelector(".navbar");
 const navigationLinks = document.querySelectorAll(".navbar a");
 
+// Opens or closes the navigation menu when the toggle is clicked.
 menuToggle.addEventListener("click", () => {
   const menuIsOpen = navbar.classList.toggle("active");
 
   menuToggle.setAttribute("aria-expanded", menuIsOpen);
 });
 
+// Closes the menu when the user clicks somewhere outside it.
 document.addEventListener("click", (event) => {
   const clickedOutsideMenu =
     !navbar.contains(event.target) &&
@@ -82,6 +86,7 @@ const reviews = [
 
 const reviewsBody = document.getElementById("reviews-body");
 
+// Creates review rows from the review array.
 function renderReviews() {
   if (reviews.length === 0) {
     reviewsBody.innerHTML = `
@@ -118,9 +123,8 @@ const subjectError = document.getElementById("subject-error");
 const messageError = document.getElementById("message-error");
 const formSuccess = document.getElementById("form-success");
 
-contactForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-
+// Clears previous validation messages and invalid-field styling.
+function clearFormFeedback() {
   nameError.textContent = "";
   emailError.textContent = "";
   subjectError.textContent = "";
@@ -131,6 +135,12 @@ contactForm.addEventListener("submit", (event) => {
   emailInput.classList.remove("invalid");
   subjectInput.classList.remove("invalid");
   messageInput.classList.remove("invalid");
+}
+
+// Checks form fields and displays specific validation messages.
+contactForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  clearFormFeedback();
 
   const name = nameInput.value.trim();
   const email = emailInput.value.trim();

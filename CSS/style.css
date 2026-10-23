@@ -18,19 +18,20 @@
   --primary: #8b4513;   
   --accent: #c0764e; 
   --accent-light: #fef3c7; 
-  --border-color: #e2d4c0; 
-  }   
+  --border-color: #cb9864; 
+}
 
 .darkmode {
   --bg-color: #29100b;        
   --surface-color: #472d20;     
   --text-main: #fffdf9;    
-  --text-muted: #e4cbba;  
-  --primary: #c38572;   
+  --text-muted: #e4cbba;   
+  --primary: #a5614c;   
   --accent: #98482d; 
   --accent-light: #271109; 
-  --border-color: #200d05; 
+  --border-color: #b37053; 
 }
+
 #theme-switch {
   height: 40px;
   width: 40px;
@@ -215,7 +216,7 @@ form {
 input, textarea {
   width: 100%;
   padding: var(--space-xs) var(--space-sm);
-  border: 1px solid var(--border-color);
+  border: 3px solid var(--border-color);
   border-radius: 6px;
   font-size: var(--font-base);
   background-color: #ffffff;
@@ -280,6 +281,7 @@ footer {
     padding: var(--space-sm);
   }
 }
+
 label {
   display: block;
   font-size: var(--font-sm);
@@ -371,4 +373,16 @@ section {
 
 .invalid {
   border: 2px solid #b42318;
+}
+
+.darkmode input,
+.darkmode textarea {
+  background-color: var(--surface-color);
+  color: var(--text-main);
+}
+
+.darkmode input::placeholder,
+.darkmode textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 1;
 }
