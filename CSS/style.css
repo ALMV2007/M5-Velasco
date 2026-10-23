@@ -14,15 +14,15 @@
   --bg-color: #fffdf9;        
   --surface-color: #f7f1e5;     
   --text-main: #2b1b17;    
-  --text-muted: #68564d;  
+  --text-muted: #4a2d1e;  
   --primary: #8b4513;   
-  --accent: #d49b00; 
+  --accent: #c0764e; 
   --accent-light: #fef3c7; 
   --border-color: #e2d4c0; 
   }   
 
 .darkmode {
-  --bg-color: #422018;        
+  --bg-color: #29100b;        
   --surface-color: #472d20;     
   --text-main: #fffdf9;    
   --text-muted: #e4cbba;  
@@ -36,7 +36,7 @@
   width: 40px;
   padding: 0;
   border-radius: 50%;
-  background-color: var(--text-muted);
+  background-color: var(--accent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,7 +44,7 @@
 }
 
 #theme-switch svg {
-  fill: var(--text-main);
+  fill: var(--text-muted);
 }
 
 #theme-switch svg:last-child {
@@ -311,5 +311,47 @@ section {
 @media (min-width: 900px) {
   #about {
     text-align: center;
+  }
+}
+
+#menu-toggle {
+  display: none;
+}
+
+@media (max-width: 599px) {
+  #menu-toggle {
+    display: block;
+    background-color: var(--primary);
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .navbar ul {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: var(--space-sm);
+    background-color: var(--bg-color);
+    border-bottom: 2px solid var(--border-color);
+  }
+
+  .navbar.active ul {
+    display: flex;
+  }
+
+  .navbar li,
+  .navbar button {
+    margin-bottom: var(--space-xs);
+  }
+}
+
+@media (min-width: 600px) {
+  .navbar ul {
+    display: flex;
   }
 }
