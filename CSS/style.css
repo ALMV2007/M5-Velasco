@@ -355,3 +355,20 @@ section {
     display: flex;
   }
 }
+
+.error-message {
+  display: block;
+  color: #b42318;
+  font-size: var(--font-sm);
+  margin-top: 0.25rem;
+}
+
+.success-message {
+  color: var(--primary);
+  font-weight: bold;
+  margin-top: var(--space-sm);
+}
+
+.invalid {
+  border: 2px solid #b42318;
+}
